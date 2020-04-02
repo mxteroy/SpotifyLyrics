@@ -45,8 +45,10 @@ function App() {
         <input type="text" id="song_box" onChange={e => setSong(e.target.value)} name="fname" placeholder="song"/>
         <input type="submit" value="Submit" onClick={() => fetchLyrics()}/> */}
         < SpotifyLogin clientId = {spotifyClientID}
-        redirectUri='http://localhost:3000' scope="user-read-playback-state" onSuccess={(token) => getCurrentSong(token)} onFailure={() => console.log("FAILED LOGIN")}/>
+        redirectUri='http://localhost:3000' scope="user-read-playback-state" onSuccess={(token) => getCurrentSong(token)} onFailure={() => console.log("FAILED LOGIN")} buttonText="Get current song"/>
+        <p >{song}  {artist}</p>
         <Lyrics lyrics={lyrics}/>
+        
     </div>
   );
 }
